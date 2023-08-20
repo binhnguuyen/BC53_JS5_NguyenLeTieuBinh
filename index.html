@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Bài 1: tính điểm thi -->
+        <h3>Quản lý tuyển sinh</h3>
+
+        <label for="">Điểm chuẩn</label>
+        <input type="number" name="" id="passScore" class="form-control" placeholder="Điểm chuẩn"
+            aria-describedby="helpId">
+
+        <label for="">Chọn khu vực</label>
+        <select name="Khu vực" id="areaChoose">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="X">X</option>
+        </select>
+        <br>
+
+        <label for="">Chọn đối tượng</label>
+        <select name="" id="targetChoose">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="0">0</option>
+        </select>
+
+        <br>
+        <label for="">Điểm môn thứ nhất</label>
+        <input type="number" name="" id="firstScore" class="form-control" placeholder="Điểm môn thư nhất"
+            aria-describedby="helpId">
+
+        <label for="">Điểm môn thứ hai</label>
+        <input type="number" name="" id="secondScore" class="form-control" placeholder="Điểm môn thư hai"
+            aria-describedby="helpId">
+
+        <label for="">Điểm môn thứ ba</label>
+        <input type="number" name="" id="thirdScore" class="form-control" placeholder="Điểm môn thư ba"
+            aria-describedby="helpId">
+
+        <!-- ko bỏ button vào trong 1 cái form chứ ko khi click sẽ load lại trang và mất hết dữ liệu -->
+        <div><button onclick="quanLyTuyenSinh()">Kết Quả</button></div>
+        <div id="result1" class="bg-success text-black array"></div>
+
+        <!-- Bài 2: tính tiền điện -->
+        <br><br><br><br>
+        <h3>Tính tiền điện</h3>
+
+        <label for="">Nhập họ tên</label>
+        <input type="text" name="" id="name" class="form-control" placeholder="Nguyễn Văn A" aria-describedby="helpId">
+
+        <label for="">Nhập số Kw điện đã dùng</label>
+        <input type="number" name="" id="powerConsumption" class="form-control" placeholder="...Kw"
+            aria-describedby="helpId">
+
+        <div><button onclick="calcPowerConsumption()">Tính tiền điện</button></div>
+        <div id="result2" class="bg-success text-black array"></div>
+
+        <!-- Bài 3: tính thuế thu nhập cá nhân -->
+        <br><br><br><br>
+        <h3>Tính thuế thu nhập cá nhân</h3>
+
+        <label for="">Nhập họ tên</label>
+        <input type="text" name="" id="nameTax" class="form-control" placeholder="Nguyễn Văn A"
+            aria-describedby="helpId">
+
+        <label for="">Nhập tổng thu nhập năm (VND)</label>
+        <input type="number" name="" id="salaryForYear" class="form-control" placeholder="Tổng thu nhập năm (VND)"
+            aria-describedby="helpId">
+
+        <label for="">Nhập số người phụ thuộc (người)</label>
+        <input type="number" name="" id="peopleInFamily" class="form-control" placeholder="Số người phụ thuộc (người)"
+            aria-describedby="helpId">
+
+        <div><button onclick="calcTaxOnPerson()">Tính thuế thu nhập cá nhân</button></div>
+        <div id="result3" class="bg-success text-black array"></div>
+
+        <!-- Bài 4: tính tiền cáp -->
+        <br><br><br><br>
+        <h3>Tính tiền cáp</h3>
+
+        <label for="">Chọn loại khách hàng</label>
+        <!-- onchange="showConnectChanNum()" -->
+        <select name="Khu vực" id="typeOfCustomer">
+            <option value="Per">Nhà dân</option>
+            <option value="Com">Doanh nghiệp</option>
+        </select>
+        <br>
+
+        <label for="">Nhập mã khách hàng</label>
+        <input type="text" name="" id="customerCode" class="form-control" placeholder="123...xxx"
+            aria-describedby="helpId">
+
+        <div id="showConnectChanNum" style="display: none;">
+            <label for="">Nhập số kết nối</label>
+            <input type="number" name="" id="connectChanNum" class="form-control" placeholder="Số kết nối"
+                aria-describedby="helpId">
+        </div>
+
+
+        <label for="">Nhập số kênh cao cấp</label>
+        <input type="number" name="" id="exclusiveChanel" class="form-control" placeholder="Số kênh cao cấp"
+            aria-describedby="helpId">
+
+        <div><button onclick="calcCableMoney()">Tính tiền cáp</button></div>
+        <div id="result4" class="bg-success text-black array"></div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/demo.js"></script> -->
+</body>
+
+</html>
